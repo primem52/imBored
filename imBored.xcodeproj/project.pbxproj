@@ -3,18 +3,32 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		536CEBE525772C7400DF1CEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536CEBE425772C7400DF1CEB /* AppDelegate.swift */; };
 		536CEBE725772C7400DF1CEB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536CEBE625772C7400DF1CEB /* SceneDelegate.swift */; };
-		536CEBE925772C7400DF1CEB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536CEBE825772C7400DF1CEB /* ViewController.swift */; };
+		536CEBE925772C7400DF1CEB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536CEBE825772C7400DF1CEB /* LoginViewController.swift */; };
 		536CEBEC25772C7400DF1CEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 536CEBEA25772C7400DF1CEB /* Main.storyboard */; };
 		536CEBEE25772C7800DF1CEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 536CEBED25772C7800DF1CEB /* Assets.xcassets */; };
 		536CEBF125772C7800DF1CEB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 536CEBEF25772C7800DF1CEB /* LaunchScreen.storyboard */; };
 		536CEBFC25772C7800DF1CEB /* imBoredTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536CEBFB25772C7800DF1CEB /* imBoredTests.swift */; };
 		536CEC0725772C7800DF1CEB /* imBoredUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536CEC0625772C7800DF1CEB /* imBoredUITests.swift */; };
+		536CEC1D25772E2F00DF1CEB /* UIViewController+alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536CEC1C25772E2F00DF1CEB /* UIViewController+alert.swift */; };
+		53E91CA3257866F40061C99F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 53E91CA2257866F40061C99F /* GoogleService-Info.plist */; };
+		53E91CB4257870900061C99F /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E91CB3257870900061C99F /* APIKeys.swift */; };
+		53E91CB92578779D0061C99F /* SearchPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E91CB82578779D0061C99F /* SearchPageViewController.swift */; };
+		53E91CBE257878D40061C99F /* TVSearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E91CBD257878D40061C99F /* TVSearchResultViewController.swift */; };
+		53E91CC325787D900061C99F /* ResultData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E91CC225787D900061C99F /* ResultData.swift */; };
+		53E91CC825787DA50061C99F /* MovieData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E91CC725787DA50061C99F /* MovieData.swift */; };
+		53E91CCD25787DEB0061C99F /* TVData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E91CCC25787DEB0061C99F /* TVData.swift */; };
+		53E91CD825788AEA0061C99F /* MovieSearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E91CD725788AEA0061C99F /* MovieSearchResultViewController.swift */; };
+		53E91CDD25788E9D0061C99F /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E91CDC25788E9D0061C99F /* MovieTableViewCell.swift */; };
+		53E91CE225788EAC0061C99F /* TVTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E91CE125788EAC0061C99F /* TVTableViewCell.swift */; };
+		53E91CE72578A5E70061C99F /* ContentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E91CE62578A5E70061C99F /* ContentDetailViewController.swift */; };
+		53E91CEF2578B7360061C99F /* ServicesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E91CEE2578B7360061C99F /* ServicesCollectionViewCell.swift */; };
+		A7B90498A2C0B4D308450EB7 /* Pods_imBored.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45490C1F0381B5DE980A8383 /* Pods_imBored.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,10 +49,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0395E379169541B8ADBEC139 /* Pods-imBored.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-imBored.release.xcconfig"; path = "Target Support Files/Pods-imBored/Pods-imBored.release.xcconfig"; sourceTree = "<group>"; };
+		45490C1F0381B5DE980A8383 /* Pods_imBored.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_imBored.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		536CEBE125772C7400DF1CEB /* imBored.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = imBored.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		536CEBE425772C7400DF1CEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		536CEBE625772C7400DF1CEB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		536CEBE825772C7400DF1CEB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		536CEBE825772C7400DF1CEB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		536CEBEB25772C7400DF1CEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		536CEBED25772C7800DF1CEB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		536CEBF025772C7800DF1CEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +65,20 @@
 		536CEC0225772C7800DF1CEB /* imBoredUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = imBoredUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		536CEC0625772C7800DF1CEB /* imBoredUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imBoredUITests.swift; sourceTree = "<group>"; };
 		536CEC0825772C7800DF1CEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		536CEC1C25772E2F00DF1CEB /* UIViewController+alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+alert.swift"; sourceTree = "<group>"; };
+		53E91CA2257866F40061C99F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		53E91CB3257870900061C99F /* APIKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
+		53E91CB82578779D0061C99F /* SearchPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPageViewController.swift; sourceTree = "<group>"; };
+		53E91CBD257878D40061C99F /* TVSearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVSearchResultViewController.swift; sourceTree = "<group>"; };
+		53E91CC225787D900061C99F /* ResultData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultData.swift; sourceTree = "<group>"; };
+		53E91CC725787DA50061C99F /* MovieData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieData.swift; sourceTree = "<group>"; };
+		53E91CCC25787DEB0061C99F /* TVData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVData.swift; sourceTree = "<group>"; };
+		53E91CD725788AEA0061C99F /* MovieSearchResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieSearchResultViewController.swift; sourceTree = "<group>"; };
+		53E91CDC25788E9D0061C99F /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
+		53E91CE125788EAC0061C99F /* TVTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVTableViewCell.swift; sourceTree = "<group>"; };
+		53E91CE62578A5E70061C99F /* ContentDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentDetailViewController.swift; sourceTree = "<group>"; };
+		53E91CEE2578B7360061C99F /* ServicesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesCollectionViewCell.swift; sourceTree = "<group>"; };
+		795DD24652D8FAB9D51E8F5A /* Pods-imBored.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-imBored.debug.xcconfig"; path = "Target Support Files/Pods-imBored/Pods-imBored.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7B90498A2C0B4D308450EB7 /* Pods_imBored.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +107,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D896A8E66E8F587D439ABF2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				45490C1F0381B5DE980A8383 /* Pods_imBored.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		536CEBD825772C7400DF1CEB = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +122,8 @@
 				536CEBFA25772C7800DF1CEB /* imBoredTests */,
 				536CEC0525772C7800DF1CEB /* imBoredUITests */,
 				536CEBE225772C7400DF1CEB /* Products */,
+				6CFAF3CE7A50A971E2D82EEF /* Pods */,
+				3D896A8E66E8F587D439ABF2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,11 +142,24 @@
 			children = (
 				536CEBE425772C7400DF1CEB /* AppDelegate.swift */,
 				536CEBE625772C7400DF1CEB /* SceneDelegate.swift */,
-				536CEBE825772C7400DF1CEB /* ViewController.swift */,
+				536CEBE825772C7400DF1CEB /* LoginViewController.swift */,
+				53E91CB82578779D0061C99F /* SearchPageViewController.swift */,
+				53E91CBD257878D40061C99F /* TVSearchResultViewController.swift */,
+				53E91CD725788AEA0061C99F /* MovieSearchResultViewController.swift */,
+				53E91CE62578A5E70061C99F /* ContentDetailViewController.swift */,
+				53E91CDC25788E9D0061C99F /* MovieTableViewCell.swift */,
+				53E91CE125788EAC0061C99F /* TVTableViewCell.swift */,
+				53E91CEE2578B7360061C99F /* ServicesCollectionViewCell.swift */,
+				53E91CC225787D900061C99F /* ResultData.swift */,
+				53E91CC725787DA50061C99F /* MovieData.swift */,
+				53E91CCC25787DEB0061C99F /* TVData.swift */,
 				536CEBEA25772C7400DF1CEB /* Main.storyboard */,
 				536CEBED25772C7800DF1CEB /* Assets.xcassets */,
 				536CEBEF25772C7800DF1CEB /* LaunchScreen.storyboard */,
 				536CEBF225772C7800DF1CEB /* Info.plist */,
+				53E91CA2257866F40061C99F /* GoogleService-Info.plist */,
+				536CEC1C25772E2F00DF1CEB /* UIViewController+alert.swift */,
+				53E91CB3257870900061C99F /* APIKeys.swift */,
 			);
 			path = imBored;
 			sourceTree = "<group>";
@@ -128,6 +182,15 @@
 			path = imBoredUITests;
 			sourceTree = "<group>";
 		};
+		6CFAF3CE7A50A971E2D82EEF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				795DD24652D8FAB9D51E8F5A /* Pods-imBored.debug.xcconfig */,
+				0395E379169541B8ADBEC139 /* Pods-imBored.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +198,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 536CEC0B25772C7800DF1CEB /* Build configuration list for PBXNativeTarget "imBored" */;
 			buildPhases = (
+				A71F0C251F9ACFA65B1D28CF /* [CP] Check Pods Manifest.lock */,
 				536CEBDD25772C7400DF1CEB /* Sources */,
 				536CEBDE25772C7400DF1CEB /* Frameworks */,
 				536CEBDF25772C7400DF1CEB /* Resources */,
+				A45A01C5B608B6A0B3A9FE31 /* [CP] Embed Pods Frameworks */,
+				0A4141CEAE1540B1D053444A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -233,6 +299,7 @@
 			files = (
 				536CEBF125772C7800DF1CEB /* LaunchScreen.storyboard in Resources */,
 				536CEBEE25772C7800DF1CEB /* Assets.xcassets in Resources */,
+				53E91CA3257866F40061C99F /* GoogleService-Info.plist in Resources */,
 				536CEBEC25772C7400DF1CEB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -253,14 +320,85 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0A4141CEAE1540B1D053444A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-imBored/Pods-imBored-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-imBored/Pods-imBored-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-imBored/Pods-imBored-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A45A01C5B608B6A0B3A9FE31 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-imBored/Pods-imBored-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-imBored/Pods-imBored-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-imBored/Pods-imBored-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A71F0C251F9ACFA65B1D28CF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-imBored-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		536CEBDD25772C7400DF1CEB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				536CEBE925772C7400DF1CEB /* ViewController.swift in Sources */,
+				536CEBE925772C7400DF1CEB /* LoginViewController.swift in Sources */,
+				53E91CE72578A5E70061C99F /* ContentDetailViewController.swift in Sources */,
+				53E91CBE257878D40061C99F /* TVSearchResultViewController.swift in Sources */,
+				53E91CEF2578B7360061C99F /* ServicesCollectionViewCell.swift in Sources */,
+				53E91CDD25788E9D0061C99F /* MovieTableViewCell.swift in Sources */,
+				53E91CB4257870900061C99F /* APIKeys.swift in Sources */,
+				53E91CE225788EAC0061C99F /* TVTableViewCell.swift in Sources */,
 				536CEBE525772C7400DF1CEB /* AppDelegate.swift in Sources */,
+				53E91CD825788AEA0061C99F /* MovieSearchResultViewController.swift in Sources */,
+				53E91CB92578779D0061C99F /* SearchPageViewController.swift in Sources */,
+				53E91CCD25787DEB0061C99F /* TVData.swift in Sources */,
+				53E91CC825787DA50061C99F /* MovieData.swift in Sources */,
 				536CEBE725772C7400DF1CEB /* SceneDelegate.swift in Sources */,
+				536CEC1D25772E2F00DF1CEB /* UIViewController+alert.swift in Sources */,
+				53E91CC325787D900061C99F /* ResultData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,6 +571,7 @@
 		};
 		536CEC0C25772C7800DF1CEB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 795DD24652D8FAB9D51E8F5A /* Pods-imBored.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -452,6 +591,7 @@
 		};
 		536CEC0D25772C7800DF1CEB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0395E379169541B8ADBEC139 /* Pods-imBored.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
