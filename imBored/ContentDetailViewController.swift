@@ -16,12 +16,18 @@ class ContentDetailViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var textView: UITextView!
+    
+    
+    
+    @IBOutlet weak var selectedServiceLabel: UILabel!
+    
     let servicesList: [String] = ["fuboTV","google_play","hulu","itunes","netflix","Philo","prime","vudu","youtube","pirate"]
     
     let servicesImages = [UIImage(named: "fuboTV"),UIImage(named: "google_play"),UIImage(named: "hulu"),UIImage(named: "itunes"),UIImage(named: "netflix"),UIImage(named: "Philo"),UIImage(named: "prime"),UIImage(named: "vudu"),UIImage(named: "youtube"),UIImage(named: "pirate")]
     
     var showData: TVData!
     var movieData: MovieData!
+    var contentType: String = ""
     
     var name: String = ""
     var date: String = ""
@@ -32,6 +38,7 @@ class ContentDetailViewController: UIViewController {
         super.viewDidLoad()
         collectionView.delegate = self
         collectionView.dataSource = self
+        selectedServiceLabel.isHidden = true
         updateUserInterface()
 
         // Do any additional setup after loading the view.
@@ -69,6 +76,11 @@ extension ContentDetailViewController: UICollectionViewDelegate, UICollectionVie
             let image = servicesImages[indexPath.row]
             cell.imageView.image = image
             return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedServiceLabel.isHidden = false
+        selectedServiceLabel.text = servicesList[indexPath.row].capitalized.replacingOccurrences(of: "_", with: " ")
     }
     
     

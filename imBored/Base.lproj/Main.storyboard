@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -296,8 +295,8 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b9L-yT-SMl">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="b9L-yT-SMl">
+                                        <rect key="frame" x="8" y="0.0" width="406" height="774"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xGi-Bs-1q7">
@@ -339,10 +338,10 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9J1-ia-R1U">
-                                        <rect key="frame" x="20" y="431" width="374" height="308"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tLI-hy-gsO">
+                                        <rect key="frame" x="20" y="442" width="374" height="70"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tLI-hy-gsO">
                                             <size key="itemSize" width="128" height="128"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -350,29 +349,50 @@
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionCell" id="Hz8-Se-Pzk" customClass="ServicesCollectionViewCell" customModule="imBored" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="PMq-Ph-Bxt">
-                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                    <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NJI-6s-QYy">
-                                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NJI-6s-QYy">
+                                                            <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="70" id="3i2-QT-DiK"/>
+                                                                <constraint firstAttribute="height" constant="70" id="Fwc-GW-soL"/>
+                                                            </constraints>
                                                         </imageView>
                                                     </subviews>
-                                                    <constraints>
-                                                        <constraint firstAttribute="trailing" secondItem="NJI-6s-QYy" secondAttribute="trailing" id="IEO-Oe-ftP"/>
-                                                        <constraint firstItem="NJI-6s-QYy" firstAttribute="top" secondItem="PMq-Ph-Bxt" secondAttribute="top" id="KoX-wZ-7Hj"/>
-                                                        <constraint firstAttribute="bottom" secondItem="NJI-6s-QYy" secondAttribute="bottom" id="tOS-Q7-qs9"/>
-                                                        <constraint firstItem="NJI-6s-QYy" firstAttribute="leading" secondItem="PMq-Ph-Bxt" secondAttribute="leading" id="zYe-vR-2QB"/>
-                                                    </constraints>
-                                                </collectionViewCellContentView>
+                                                </view>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="NJI-6s-QYy" secondAttribute="bottom" id="Tyf-kO-GlT"/>
+                                                    <constraint firstItem="NJI-6s-QYy" firstAttribute="top" secondItem="Hz8-Se-Pzk" secondAttribute="top" id="gMG-Nx-VfJ"/>
+                                                    <constraint firstAttribute="trailing" secondItem="NJI-6s-QYy" secondAttribute="trailing" id="jbD-1I-Cgu"/>
+                                                    <constraint firstItem="NJI-6s-QYy" firstAttribute="leading" secondItem="Hz8-Se-Pzk" secondAttribute="leading" id="tKK-SP-PVW"/>
+                                                </constraints>
+                                                <size key="customSize" width="70" height="70"/>
                                                 <connections>
                                                     <outlet property="imageView" destination="NJI-6s-QYy" id="Qj1-EC-cFr"/>
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>
                                     </collectionView>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wSA-dR-6cE">
+                                        <rect key="frame" x="20" y="520" width="374" height="235"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Selected Streaming Service" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kdo-Kk-1HX">
+                                                <rect key="frame" x="8" y="8" width="358" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
                                 </subviews>
                             </scrollView>
                         </subviews>
@@ -392,6 +412,7 @@
                         <outlet property="contentImageView" destination="b9L-yT-SMl" id="c8p-eK-bug"/>
                         <outlet property="contentLangLabel" destination="Z3p-dG-NOM" id="i7K-ak-2mO"/>
                         <outlet property="contentTitleLabel" destination="eAP-NF-SQC" id="sXj-vy-5Pv"/>
+                        <outlet property="selectedServiceLabel" destination="kdo-Kk-1HX" id="YcP-74-tc5"/>
                         <outlet property="textView" destination="59y-8G-dLY" id="bD2-Sh-FEl"/>
                     </connections>
                 </viewController>

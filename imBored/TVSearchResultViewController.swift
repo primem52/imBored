@@ -7,30 +7,30 @@
 
 import UIKit
 
-class MovieSearchResultViewController: UIViewController {
+class TVSearchResultViewController: UIViewController {
     
-
     @IBOutlet weak var tableView: UITableView!
-  
-    var movies = ResultData()
-    let contentType = "Movie"
+    var shows = ResultData()
+    let contentType = "TV"
     var query: String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         // Do any additional setup after loading the view.
-        movies.getMovieData(query: query) {
+        
+        shows.getTVData(query: query){
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
         }
+        
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ShowMovieDetail" {
+        if segue.identifier == "ShowTVDetail" {
             let destination = segue.destination as! ContentDetailViewController
             let selectedIndexPath = tableView.indexPathForSelectedRow!
-            destination.movieData = movies.movieArray[selectedIndexPath.row]
+            destination.showData = shows.tvArray[selectedIndexPath.row]
             destination.contentType = contentType
         }
     }
@@ -48,23 +48,21 @@ class MovieSearchResultViewController: UIViewController {
 
 }
 
-extension MovieSearchResultViewController: UITableViewDelegate, UITableViewDataSource {
+extension TVSearchResultViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return movies.movieArray.count
+        return shows.tvArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! MovieTableViewCell
-        cell.dateLabel.text = movies.movieArray[indexPath.row].release_date
-        cell.titleLabel.text = movies.movieArray[indexPath.row].title
-        cell.descriptionView.text = movies.movieArray[indexPath.row].overview
-        cell.langLabel.text = movies.movieArray[indexPath.row].original_language
-        let imageURLString = "https://image.tmdb.org/t/p/w185\(movies.movieArray[indexPath.row].poster_path ?? "")"
-        print(imageURLString)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! TVTableViewCell
+        cell.dateLabel.text = shows.tvArray[indexPath.row].first_air_date
+        cell.titleLabel.text = shows.tvArray[indexPath.row].name
+        cell.descriptionTextView.text = shows.tvArray[indexPath.row].overview
+        cell.langLabel.text = shows.tvArray[indexPath.row].origin_country?.first ?? ""
+        let imageURLString = "https://image.tmdb.org/t/p/w185\(shows.tvArray[indexPath.row].poster_path ?? "")"
         cell.picImageView.imageFromURL(urlString: imageURLString)
         return cell
     }
-    
-    
 }
+
 
