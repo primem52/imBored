@@ -16,6 +16,8 @@
 		536CEBFC25772C7800DF1CEB /* imBoredTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536CEBFB25772C7800DF1CEB /* imBoredTests.swift */; };
 		536CEC0725772C7800DF1CEB /* imBoredUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536CEC0625772C7800DF1CEB /* imBoredUITests.swift */; };
 		536CEC1D25772E2F00DF1CEB /* UIViewController+alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536CEC1C25772E2F00DF1CEB /* UIViewController+alert.swift */; };
+		5386B56925812F87004EE2AB /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5386B56825812F87004EE2AB /* Media.swift */; };
+		5386B5742581384B004EE2AB /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5386B5732581384B004EE2AB /* ReviewViewController.swift */; };
 		53E91CA3257866F40061C99F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 53E91CA2257866F40061C99F /* GoogleService-Info.plist */; };
 		53E91CB4257870900061C99F /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E91CB3257870900061C99F /* APIKeys.swift */; };
 		53E91CB92578779D0061C99F /* SearchPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E91CB82578779D0061C99F /* SearchPageViewController.swift */; };
@@ -66,6 +68,8 @@
 		536CEC0625772C7800DF1CEB /* imBoredUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imBoredUITests.swift; sourceTree = "<group>"; };
 		536CEC0825772C7800DF1CEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		536CEC1C25772E2F00DF1CEB /* UIViewController+alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+alert.swift"; sourceTree = "<group>"; };
+		5386B56825812F87004EE2AB /* Media.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
+		5386B5732581384B004EE2AB /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 		53E91CA2257866F40061C99F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		53E91CB3257870900061C99F /* APIKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 		53E91CB82578779D0061C99F /* SearchPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPageViewController.swift; sourceTree = "<group>"; };
@@ -143,10 +147,12 @@
 				536CEBE425772C7400DF1CEB /* AppDelegate.swift */,
 				536CEBE625772C7400DF1CEB /* SceneDelegate.swift */,
 				536CEBE825772C7400DF1CEB /* LoginViewController.swift */,
+				5386B56825812F87004EE2AB /* Media.swift */,
 				53E91CB82578779D0061C99F /* SearchPageViewController.swift */,
 				53E91CBD257878D40061C99F /* TVSearchResultViewController.swift */,
 				53E91CD725788AEA0061C99F /* MovieSearchResultViewController.swift */,
 				53E91CE62578A5E70061C99F /* ContentDetailViewController.swift */,
+				5386B5732581384B004EE2AB /* ReviewViewController.swift */,
 				53E91CDC25788E9D0061C99F /* MovieTableViewCell.swift */,
 				53E91CE125788EAC0061C99F /* TVTableViewCell.swift */,
 				53E91CEE2578B7360061C99F /* ServicesCollectionViewCell.swift */,
@@ -390,6 +396,7 @@
 				53E91CEF2578B7360061C99F /* ServicesCollectionViewCell.swift in Sources */,
 				53E91CDD25788E9D0061C99F /* MovieTableViewCell.swift in Sources */,
 				53E91CB4257870900061C99F /* APIKeys.swift in Sources */,
+				5386B56925812F87004EE2AB /* Media.swift in Sources */,
 				53E91CE225788EAC0061C99F /* TVTableViewCell.swift in Sources */,
 				536CEBE525772C7400DF1CEB /* AppDelegate.swift in Sources */,
 				53E91CD825788AEA0061C99F /* MovieSearchResultViewController.swift in Sources */,
@@ -397,6 +404,7 @@
 				53E91CCD25787DEB0061C99F /* TVData.swift in Sources */,
 				53E91CC825787DA50061C99F /* MovieData.swift in Sources */,
 				536CEBE725772C7400DF1CEB /* SceneDelegate.swift in Sources */,
+				5386B5742581384B004EE2AB /* ReviewViewController.swift in Sources */,
 				536CEC1D25772E2F00DF1CEB /* UIViewController+alert.swift in Sources */,
 				53E91CC325787D900061C99F /* ResultData.swift in Sources */,
 			);

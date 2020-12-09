@@ -383,13 +383,44 @@
                                         <rect key="frame" x="20" y="520" width="374" height="235"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Selected Streaming Service" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kdo-Kk-1HX">
-                                                <rect key="frame" x="8" y="8" width="358" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Streaming Service" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kdo-Kk-1HX">
+                                                <rect key="frame" x="8" y="8" width="153" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="999 peopleBored" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JcG-DG-sfm">
+                                                <rect key="frame" x="159" y="8" width="207" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pzm-T4-ZvQ">
+                                                <rect key="frame" x="8" y="37" width="358" height="198"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <prototypes>
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="1wL-bq-poA" style="IBUITableViewCellStyleDefault" id="rGI-qi-ZhM">
+                                                        <rect key="frame" x="0.0" y="28" width="358" height="43.5"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rGI-qi-ZhM" id="A2l-9L-1gg">
+                                                            <rect key="frame" x="0.0" y="0.0" width="358" height="43.5"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1wL-bq-poA">
+                                                                    <rect key="frame" x="20" y="0.0" width="318" height="43.5"/>
+                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </tableViewCellContentView>
+                                                    </tableViewCell>
+                                                </prototypes>
+                                            </tableView>
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
@@ -403,6 +434,11 @@
                         <barButtonItem key="leftBarButtonItem" title="Return to Search" id="Xq2-pP-wLK">
                             <connections>
                                 <segue destination="vGN-zw-qEb" kind="unwind" unwindAction="unwindSignOutPressedWithSegue:" id="8bH-qA-4hV"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="OvS-on-CxW">
+                            <connections>
+                                <segue destination="hKh-1H-MUb" kind="presentation" identifier="AddDetail" modalPresentationStyle="fullScreen" id="atA-Mi-JQk"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -420,6 +456,30 @@
                 <exit id="vGN-zw-qEb" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4434.7826086956529" y="174.77678571428569"/>
+        </scene>
+        <!--Review View Controller-->
+        <scene sceneID="Tls-aI-Znc">
+            <objects>
+                <viewController id="DEn-AC-2m7" customClass="ReviewViewController" customModule="imBored" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UDD-0R-Qfd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="7yd-gF-Nwh"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="0EU-rV-GEx">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="Zxi-hh-kRt"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="dD8-Bs-MyU">
+                            <connections>
+                                <segue destination="xfL-IS-afl" kind="unwind" unwindAction="unwindSignOutPressedWithSegue:" id="KtY-ye-hOs"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AHG-UN-Ig9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="xfL-IS-afl" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="6710.144927536232" y="180.80357142857142"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="WJh-ia-4tz">
@@ -485,12 +545,31 @@
             </objects>
             <point key="canvasLocation" x="12" y="1444"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fwj-fg-3AN">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hKh-1H-MUb" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UaM-eN-VEQ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="DEn-AC-2m7" kind="relationship" relationship="rootViewController" id="pVi-fP-Auh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cgp-OC-YfM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5800" y="180.80357142857142"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="dYl-2G-Ntx"/>
+        <segue reference="ymc-PA-B4E"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="logo" width="768" height="1024"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

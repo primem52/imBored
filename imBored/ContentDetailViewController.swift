@@ -27,6 +27,7 @@ class ContentDetailViewController: UIViewController {
     
     var showData: TVData!
     var movieData: MovieData!
+    var content: Media!
     var contentType: String = ""
     
     var name: String = ""
@@ -36,12 +37,20 @@ class ContentDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if content == nil {
+            content = Media()
+        }
         collectionView.delegate = self
         collectionView.dataSource = self
         selectedServiceLabel.isHidden = true
+     
         updateUserInterface()
-
         // Do any additional setup after loading the view.
+    }
+    
+    func updateMediaData(){
+        //content.
     }
     
     
