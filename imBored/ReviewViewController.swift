@@ -10,8 +10,10 @@ import UIKit
 class ReviewViewController: UIViewController {
     var review: Review!
     var media: Media!
+    var selectedService: String = ""
     var artwork: UIImage = UIImage()
     var dateToChange: Date = Date()
+
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var datePicker: UIDatePicker!
@@ -67,7 +69,7 @@ class ReviewViewController: UIViewController {
     
     func updateFromUserInterface(){
         review.date = dateToChange
-        review.service = selectedServiceLabel.text!
+        review.service = selectedService
         review.comment = commentView.text ?? ""
     }
     @IBAction func datePickerChanged(_ sender: UIDatePicker) {
@@ -96,6 +98,7 @@ extension ReviewViewController: UICollectionViewDelegate, UICollectionViewDataSo
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedServiceLabel.isHidden = false
         selectedServiceLabel.text = servicesList[indexPath.row].capitalized.replacingOccurrences(of: "_", with: " ")
+        selectedService = servicesList[indexPath.row]
     }
     
     

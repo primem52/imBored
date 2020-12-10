@@ -40,6 +40,8 @@ class ContentDetailViewController: UIViewController {
     var reviews: Reviews!
     var contentType: String = ""
     
+    var filteredReviewArray: [Review] = []
+    
     var name: String = ""
     var date: String = ""
     var lang: String = ""
@@ -82,7 +84,8 @@ class ContentDetailViewController: UIViewController {
             self.reviewCountLabel.text = "\(self.reviews.reviewArray.count) peopleBored"
             
         }
-      
+        
+
 
    
     }
@@ -105,8 +108,6 @@ class ContentDetailViewController: UIViewController {
             print("couldnt find case for \(segue.identifier)")
         }
     }
-   
-    
     
     
     @IBAction func addReviewButtonPressed(_ sender: UIBarButtonItem) {
@@ -126,6 +127,8 @@ class ContentDetailViewController: UIViewController {
         }
     }
     
+    @IBAction func clearFilterButtonPressed(_ sender: UIButton) {
+    }
     
     
     
@@ -150,6 +153,13 @@ class ContentDetailViewController: UIViewController {
         }
     }
     
+    func filterReviewArray(selectedItem: String){
+        filteredReviewArray = reviews.reviewArray.filter { $0.service == selectedItem }
+    }
+    func resetReviewArray(){
+        filteredReviewArray = reviews.reviewArray
+    }
+    
 }
 extension ContentDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -166,6 +176,7 @@ extension ContentDetailViewController: UICollectionViewDelegate, UICollectionVie
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedServiceLabel.isHidden = false
         selectedServiceLabel.text = servicesList[indexPath.row].capitalized.replacingOccurrences(of: "_", with: " ")
+        filterReviewArray(selectedItem: servicesList[indexPath.row])
     }
     
     
@@ -178,6 +189,8 @@ extension ContentDetailViewController: UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ReviewListTableViewCell
+        let image = UIImage(named: "\(reviews.reviewArray[indexPath.row].service)")
+        cell.serviceImage.image = image
         cell.nameLabel.text = "\(reviews.reviewArray[indexPath.row].reviewUserEmail)"
         cell.dateLabel.text = "\(dateFormatter.string(from: reviews.reviewArray[indexPath.row].date))"
         return cell

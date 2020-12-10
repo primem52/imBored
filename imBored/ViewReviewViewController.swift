@@ -14,7 +14,7 @@ private let dateFormatter: DateFormatter = {
     return dateFormatter
 }()
 
-class ViewReviewViewController: UIViewController {
+class ViewReviewViewController: UIViewController{
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
@@ -29,11 +29,13 @@ class ViewReviewViewController: UIViewController {
         
  
         super.viewDidLoad()
+
         imageView.image = artwork
 
         nameLabel.text = review.reviewUserEmail
         dateLabel.text = "\(dateFormatter.string(from: review.date))"
         serviceLabel.text = review.service
+        print(review.comment)
         commentView.text = review.comment
     }
     

@@ -384,16 +384,16 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Streaming Service" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kdo-Kk-1HX">
-                                                <rect key="frame" x="8" y="8" width="153" height="21"/>
+                                                <rect key="frame" x="8" y="8" width="103.5" height="14.5"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="999 peopleBored" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JcG-DG-sfm">
-                                                <rect key="frame" x="159" y="8" width="207" height="21"/>
+                                                <rect key="frame" x="272" y="8" width="94" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -403,42 +403,64 @@
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="rGI-qi-ZhM" customClass="ReviewListTableViewCell" customModule="imBored" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="28" width="358" height="43"/>
+                                                        <rect key="frame" x="0.0" y="28" width="358" height="38"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rGI-qi-ZhM" id="A2l-9L-1gg">
-                                                            <rect key="frame" x="0.0" y="0.0" width="358" height="43"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="358" height="38"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="08/21/1999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z9p-yB-62D">
-                                                                    <rect key="frame" x="251" y="11" width="87" height="21"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <rect key="frame" x="274" y="11" width="64" height="16"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="someemail@email.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w9x-C1-ljI">
-                                                                    <rect key="frame" x="20" y="11" width="175" height="21"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <rect key="frame" x="20" y="11" width="90" height="16"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="8"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="L2D-4L-UTu">
+                                                                    <rect key="frame" x="244" y="3" width="30" height="30.5"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="30" id="Bcl-L8-dAu"/>
+                                                                        <constraint firstAttribute="height" constant="30" id="bwb-9A-8ag"/>
+                                                                    </constraints>
+                                                                </imageView>
                                                             </subviews>
                                                             <constraints>
+                                                                <constraint firstItem="L2D-4L-UTu" firstAttribute="top" secondItem="A2l-9L-1gg" secondAttribute="top" constant="3" id="9lz-2a-dnV"/>
                                                                 <constraint firstItem="w9x-C1-ljI" firstAttribute="top" secondItem="A2l-9L-1gg" secondAttribute="topMargin" id="Blk-aU-2kR"/>
+                                                                <constraint firstItem="z9p-yB-62D" firstAttribute="leading" secondItem="L2D-4L-UTu" secondAttribute="trailing" id="Fz8-tU-Wyx"/>
                                                                 <constraint firstAttribute="bottomMargin" secondItem="z9p-yB-62D" secondAttribute="bottom" id="YVN-h4-xNk"/>
                                                                 <constraint firstItem="z9p-yB-62D" firstAttribute="top" secondItem="A2l-9L-1gg" secondAttribute="topMargin" id="cQf-3X-6mA"/>
                                                                 <constraint firstItem="z9p-yB-62D" firstAttribute="trailing" secondItem="A2l-9L-1gg" secondAttribute="trailingMargin" id="e1D-6B-9I9"/>
                                                                 <constraint firstItem="w9x-C1-ljI" firstAttribute="bottom" secondItem="A2l-9L-1gg" secondAttribute="bottomMargin" id="i6v-oB-mGl"/>
                                                                 <constraint firstItem="w9x-C1-ljI" firstAttribute="leading" secondItem="A2l-9L-1gg" secondAttribute="leadingMargin" id="vhn-jC-zmI"/>
+                                                                <constraint firstAttribute="bottom" secondItem="L2D-4L-UTu" secondAttribute="bottom" constant="4.5" id="zlH-lb-2DK"/>
                                                             </constraints>
                                                         </tableViewCellContentView>
                                                         <connections>
                                                             <outlet property="dateLabel" destination="z9p-yB-62D" id="FaS-aA-Fqq"/>
                                                             <outlet property="nameLabel" destination="w9x-C1-ljI" id="vLE-bQ-xfy"/>
+                                                            <outlet property="serviceImage" destination="L2D-4L-UTu" id="WT6-fs-9nI"/>
                                                             <segue destination="qHn-1d-HoJ" kind="show" identifier="ShowReview" id="OgC-Zm-vul"/>
                                                         </connections>
                                                     </tableViewCell>
                                                 </prototypes>
                                             </tableView>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="40r-Rr-SfL">
+                                                <rect key="frame" x="170" y="3" width="94" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Remove Filter">
+                                                    <color key="titleColor" systemColor="systemRedColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="clearFilterButtonPressed:" destination="Kk7-RX-GHL" eventType="touchUpInside" id="ODQ-ob-Sa1"/>
+                                                    <action selector="removeFilterButtonPressed:" destination="Kk7-RX-GHL" eventType="touchUpInside" id="kmE-Ig-jSo"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
@@ -725,10 +747,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="oXc-av-1g7">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="oXc-av-1g7">
                                 <rect key="frame" x="20" y="411" width="374" height="161"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.57045853140000002" green="0.57047235969999999" blue="0.57046490910000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.57045853140000002" green="0.57047235969999999" blue="0.57046490910000003" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -794,6 +816,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
