@@ -21,6 +21,8 @@
 		5386B57925813E98004EE2AB /* Medias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5386B57825813E97004EE2AB /* Medias.swift */; };
 		5386B58125813FD4004EE2AB /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5386B58025813FD4004EE2AB /* Review.swift */; };
 		5386B586258140E0004EE2AB /* Reviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5386B585258140E0004EE2AB /* Reviews.swift */; };
+		5386B58B25826C7C004EE2AB /* ReviewListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5386B58A25826C7B004EE2AB /* ReviewListTableViewCell.swift */; };
+		5386B59025826E18004EE2AB /* ViewReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5386B58F25826E18004EE2AB /* ViewReviewViewController.swift */; };
 		53E91CA3257866F40061C99F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 53E91CA2257866F40061C99F /* GoogleService-Info.plist */; };
 		53E91CB4257870900061C99F /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E91CB3257870900061C99F /* APIKeys.swift */; };
 		53E91CB92578779D0061C99F /* SearchPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E91CB82578779D0061C99F /* SearchPageViewController.swift */; };
@@ -76,6 +78,8 @@
 		5386B57825813E97004EE2AB /* Medias.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Medias.swift; sourceTree = "<group>"; };
 		5386B58025813FD4004EE2AB /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		5386B585258140E0004EE2AB /* Reviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reviews.swift; sourceTree = "<group>"; };
+		5386B58A25826C7B004EE2AB /* ReviewListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewListTableViewCell.swift; sourceTree = "<group>"; };
+		5386B58F25826E18004EE2AB /* ViewReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewReviewViewController.swift; sourceTree = "<group>"; };
 		53E91CA2257866F40061C99F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		53E91CB3257870900061C99F /* APIKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 		53E91CB82578779D0061C99F /* SearchPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPageViewController.swift; sourceTree = "<group>"; };
@@ -162,8 +166,10 @@
 				53E91CD725788AEA0061C99F /* MovieSearchResultViewController.swift */,
 				53E91CE62578A5E70061C99F /* ContentDetailViewController.swift */,
 				5386B5732581384B004EE2AB /* ReviewViewController.swift */,
+				5386B58F25826E18004EE2AB /* ViewReviewViewController.swift */,
 				53E91CDC25788E9D0061C99F /* MovieTableViewCell.swift */,
 				53E91CE125788EAC0061C99F /* TVTableViewCell.swift */,
+				5386B58A25826C7B004EE2AB /* ReviewListTableViewCell.swift */,
 				53E91CEE2578B7360061C99F /* ServicesCollectionViewCell.swift */,
 				53E91CC225787D900061C99F /* ResultData.swift */,
 				53E91CC725787DA50061C99F /* MovieData.swift */,
@@ -406,6 +412,7 @@
 				53E91CEF2578B7360061C99F /* ServicesCollectionViewCell.swift in Sources */,
 				53E91CDD25788E9D0061C99F /* MovieTableViewCell.swift in Sources */,
 				53E91CB4257870900061C99F /* APIKeys.swift in Sources */,
+				5386B59025826E18004EE2AB /* ViewReviewViewController.swift in Sources */,
 				5386B56925812F87004EE2AB /* Media.swift in Sources */,
 				53E91CE225788EAC0061C99F /* TVTableViewCell.swift in Sources */,
 				536CEBE525772C7400DF1CEB /* AppDelegate.swift in Sources */,
@@ -413,6 +420,7 @@
 				53E91CB92578779D0061C99F /* SearchPageViewController.swift in Sources */,
 				53E91CCD25787DEB0061C99F /* TVData.swift in Sources */,
 				53E91CC825787DA50061C99F /* MovieData.swift in Sources */,
+				5386B58B25826C7C004EE2AB /* ReviewListTableViewCell.swift in Sources */,
 				5386B57925813E98004EE2AB /* Medias.swift in Sources */,
 				5386B58125813FD4004EE2AB /* Review.swift in Sources */,
 				536CEBE725772C7400DF1CEB /* SceneDelegate.swift in Sources */,

@@ -10,19 +10,24 @@ import UIKit
 class ReviewViewController: UIViewController {
     var review: Review!
     var media: Media!
+    var artwork: UIImage = UIImage()
     var dateToChange: Date = Date()
-    @IBOutlet weak var testDate: UILabel!
+    
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var selectedServiceLabel: UILabel!
     
- 
+    @IBOutlet weak var commentView: UITextView!
+    @IBOutlet weak var imageView: UIImageView!
+    
     let servicesList: [String] = ["fuboTV","google_play","hulu","itunes","netflix","Philo","prime","vudu","youtube","pirate"]
     
     let servicesImages = [UIImage(named: "fuboTV"),UIImage(named: "google_play"),UIImage(named: "hulu"),UIImage(named: "itunes"),UIImage(named: "netflix"),UIImage(named: "Philo"),UIImage(named: "prime"),UIImage(named: "vudu"),UIImage(named: "youtube"),UIImage(named: "pirate")]
     
     
     override func viewDidLoad() {
+        imageView.image = artwork
+        commentView.text = ""
         collectionView.delegate = self
         collectionView.dataSource = self
         guard media != nil else{
@@ -55,9 +60,15 @@ class ReviewViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
+        self.leaveViewController()
+    }
+    
     func updateFromUserInterface(){
         review.date = dateToChange
         review.service = selectedServiceLabel.text!
+        review.comment = commentView.text ?? ""
     }
     @IBAction func datePickerChanged(_ sender: UIDatePicker) {
         dateToChange = sender.date

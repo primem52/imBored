@@ -94,13 +94,15 @@ class ContentDetailViewController: UIViewController {
             let navigationController = segue.destination as! UINavigationController
             let destination = navigationController.viewControllers.first as! ReviewViewController
             destination.media = media
-//        case "ShowReview":
-//            let destination = segue.destination as! ReviewViewController
-//            let selectedIndexPath = tableView.indexPathForSelectedRow!
-//            destination.review = reviews.reviewArray[selectedIndexPath.row]
-//            destination.spot = spot
+            destination.artwork = artwork
+        case "ShowReview":
+            let destination = segue.destination as! ViewReviewViewController
+            let selectedIndexPath = tableView.indexPathForSelectedRow!
+            destination.review = reviews.reviewArray[selectedIndexPath.row]
+            destination.media = media
+            destination.artwork = artwork
         default:
-            "couldnt find case for \(segue.identifier)"
+            print("couldnt find case for \(segue.identifier)")
         }
     }
    
@@ -135,6 +137,7 @@ class ContentDetailViewController: UIViewController {
             textView.text = showData.overview
             let imageURLString = "https://image.tmdb.org/t/p/w185\(showData.poster_path ?? "")"
             contentImageView.imageFromURL(urlString: imageURLString)
+            artwork = contentImageView.image ?? UIImage()
         }
         if movieData != nil {
             contentTitleLabel.text = movieData.title
@@ -143,6 +146,7 @@ class ContentDetailViewController: UIViewController {
             textView.text = movieData.overview
             let imageURLString = "https://image.tmdb.org/t/p/w185\(movieData.poster_path ?? "")"
             contentImageView.imageFromURL(urlString: imageURLString)
+            artwork = contentImageView.image ?? UIImage()
         }
     }
     
@@ -173,8 +177,9 @@ extension ContentDetailViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = "\(reviews.reviewArray[indexPath.row].service) |||| \(dateFormatter.string(from: reviews.reviewArray[indexPath.row].date))"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ReviewListTableViewCell
+        cell.nameLabel.text = "\(reviews.reviewArray[indexPath.row].reviewUserEmail)"
+        cell.dateLabel.text = "\(dateFormatter.string(from: reviews.reviewArray[indexPath.row].date))"
         return cell
     }
     

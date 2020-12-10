@@ -12,30 +12,33 @@ class Review {
     var service: String
     var reviewUserID: String
     var reviewUserEmail: String
+    var comment: String
     var date: Date
     var documentID: String
     
     var dictionary: [String: Any]{
         let timeIntervalDate = date.timeIntervalSince1970
-        return["service":service,"reviewUserID":reviewUserID,"reviewUserEmail":reviewUserEmail, "date": timeIntervalDate]
+        return["service":service,"reviewUserID":reviewUserID,"reviewUserEmail":reviewUserEmail, "comment":comment, "date": timeIntervalDate]
     }
     
-    init( service:String, reviewUserID: String, reviewUserEmail: String, date:Date, documentID:String){
+    init( service:String, reviewUserID: String, reviewUserEmail: String, date:Date, documentID:String, comment: String){
         self.service = service
         self.reviewUserID = reviewUserID
         self.reviewUserEmail = reviewUserEmail
         self.date = date
         self.documentID = documentID
+        self.comment = comment
     }
     
     convenience init(){
         let reviewUserID = Auth.auth().currentUser?.uid ?? ""
         let reviewUserEmail = Auth.auth().currentUser?.email ?? "unknown email"
-        self.init(service:"", reviewUserID: reviewUserID, reviewUserEmail: reviewUserEmail, date:Date(), documentID:"")
+        self.init(service:"", reviewUserID: reviewUserID, reviewUserEmail: reviewUserEmail, date:Date(), documentID:"", comment:"")
     }
     
     convenience init(dictionary: [String: Any]){
         let service = dictionary["service"] as! String? ?? ""
+        let comment = dictionary["comment"] as! String? ?? ""
         let timeIntervalDate = dictionary["date"] as! TimeInterval? ?? TimeInterval()
         let date = Date(timeIntervalSince1970: timeIntervalDate)
         let reviewUserID = dictionary["reviewUserID"] as! String? ?? ""
@@ -43,7 +46,7 @@ class Review {
         let documentID = dictionary["documentID"] as! String? ?? ""
         
         
-        self.init(service:service, reviewUserID: reviewUserID, reviewUserEmail: reviewUserEmail, date: date, documentID: documentID)
+        self.init(service:service, reviewUserID: reviewUserID, reviewUserEmail: reviewUserEmail, date: date, documentID: documentID, comment: comment)
     }
     
     func saveData(media: Media, completion: @escaping (Bool) -> ()){
