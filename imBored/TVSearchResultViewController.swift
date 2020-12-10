@@ -11,7 +11,7 @@ class TVSearchResultViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     var shows = ResultData()
-    let contentType = "TV"
+    let contentType = "0"
     var query: String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +32,7 @@ class TVSearchResultViewController: UIViewController {
             let selectedIndexPath = tableView.indexPathForSelectedRow!
             destination.showData = shows.tvArray[selectedIndexPath.row]
             destination.contentType = contentType
+            destination.docID = "\(shows.tvArray[selectedIndexPath.row].id)"
         }
     }
 //    func getImage(urlString: String) -> UIImage{

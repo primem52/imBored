@@ -7,6 +7,13 @@
 
 import UIKit
 
+private let dateFormatter: DateFormatter = {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateStyle = .medium
+    dateFormatter.timeStyle = .none
+    return dateFormatter
+}()
+
 class ContentDetailViewController: UIViewController {
     
     @IBOutlet var contentTitleLabel: UILabel!
@@ -16,10 +23,12 @@ class ContentDetailViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var textView: UITextView!
-    
-    
-    
+
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var selectedServiceLabel: UILabel!
+    @IBOutlet weak var reviewCountLabel: UILabel!
+    
+    var docID = ""
     
     let servicesList: [String] = ["fuboTV","google_play","hulu","itunes","netflix","Philo","prime","vudu","youtube","pirate"]
     
@@ -27,7 +36,8 @@ class ContentDetailViewController: UIViewController {
     
     var showData: TVData!
     var movieData: MovieData!
-    var content: Media!
+    var media: Media!
+    var reviews: Reviews!
     var contentType: String = ""
     
     var name: String = ""
@@ -35,23 +45,85 @@ class ContentDetailViewController: UIViewController {
     var lang: String = ""
     var artwork: UIImage = UIImage()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if content == nil {
-            content = Media()
+        if media == nil {
+            media = Media()
         }
+        media.documentID = docID
+        media.name = name
+        media.mediaType = contentType
+        
+        updateFromInterface()
+        
         collectionView.delegate = self
         collectionView.dataSource = self
+        
+        tableView.delegate = self
+        tableView.dataSource = self
         selectedServiceLabel.isHidden = true
      
+        reviews = Reviews()
         updateUserInterface()
         // Do any additional setup after loading the view.
     }
-    
-    func updateMediaData(){
-        //content.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        
+        if media.documentID != "" {
+            self.navigationController?.setToolbarHidden(true, animated: true)
+        }
+
+        reviews.loadData(media: media) {
+            self.tableView.reloadData()
+            self.reviewCountLabel.text = "\(self.reviews.reviewArray.count) peopleBored"
+            
+        }
+      
+
+   
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        updateUserInterface()
+        switch segue.identifier ?? "" {
+        case "AddReview":
+            let navigationController = segue.destination as! UINavigationController
+            let destination = navigationController.viewControllers.first as! ReviewViewController
+            destination.media = media
+//        case "ShowReview":
+//            let destination = segue.destination as! ReviewViewController
+//            let selectedIndexPath = tableView.indexPathForSelectedRow!
+//            destination.review = reviews.reviewArray[selectedIndexPath.row]
+//            destination.spot = spot
+        default:
+            "couldnt find case for \(segue.identifier)"
+        }
+    }
+   
+    
+    
+    
+    @IBAction func addReviewButtonPressed(_ sender: UIBarButtonItem) {
+        if media.documentID == "" {
+            print("This content has not been saved, Must save first")
+        }
+        else{
+            performSegue(withIdentifier: "AddReview", sender: nil)
+        }
+    }
+    
+    func updateFromInterface(){
+        media.saveData { (success) in
+            if !success{
+                self.oneButtonAlert(title: "save failed", message: "wouldnt save to cloud")
+            }
+        }
+    }
+    
     
     
     
@@ -90,6 +162,20 @@ extension ContentDetailViewController: UICollectionViewDelegate, UICollectionVie
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedServiceLabel.isHidden = false
         selectedServiceLabel.text = servicesList[indexPath.row].capitalized.replacingOccurrences(of: "_", with: " ")
+    }
+    
+    
+}
+
+extension ContentDetailViewController: UITableViewDelegate, UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return reviews.reviewArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        cell.textLabel?.text = "\(reviews.reviewArray[indexPath.row].service) |||| \(dateFormatter.string(from: reviews.reviewArray[indexPath.row].date))"
+        return cell
     }
     
     

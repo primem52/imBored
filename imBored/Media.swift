@@ -31,13 +31,13 @@ class Media{
         self.init(name: "", mediaType: "" ,  postingUserID: "", documentID: "")
     }
     
-//    convenience init(dictionary: [String: Any]){
-//        let name = dictionary["name"] as! String? ?? ""
-//        let mediaType = dictionary["mediaType"] as! String? ?? ""
-//        let postingUserID = dictionary["postingUserID"] as! String? ?? ""
-//        let documentID = dictionary["documentID"] as! String? ?? ""
-//        self.init(name: name, mediaType: mediaType, postingUserID: postingUserID, documentID: documentID)
-//    }
+    convenience init(dictionary: [String: Any]){
+        let name = dictionary["name"] as! String? ?? ""
+        let mediaType = dictionary["mediaType"] as! String? ?? ""
+        let postingUserID = dictionary["postingUserID"] as! String? ?? ""
+        let documentID = dictionary["documentID"] as! String? ?? ""
+        self.init(name: name, mediaType: mediaType, postingUserID: postingUserID, documentID: documentID)
+    }
     
     func saveData(completion: @escaping (Bool) -> ()){
         let db = Firestore.firestore()
@@ -67,7 +67,7 @@ class Media{
                     print("Error: \(error!.localizedDescription)")
                     return completion(false)
                 }
-                print("Added document: \(self.documentID)")
+                print("Retreived document: \(self.documentID)")
                 completion(true)
             }
         }

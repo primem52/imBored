@@ -23,7 +23,6 @@ class SearchPageViewController: UIViewController, UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if let text = searchBar.text {
             print(text)
-
             userInput = text
             if segmentedControl.selectedSegmentIndex == 0{
                 performSegue(withIdentifier: "MovieSearchView", sender: self)

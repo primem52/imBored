@@ -18,6 +18,9 @@
 		536CEC1D25772E2F00DF1CEB /* UIViewController+alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536CEC1C25772E2F00DF1CEB /* UIViewController+alert.swift */; };
 		5386B56925812F87004EE2AB /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5386B56825812F87004EE2AB /* Media.swift */; };
 		5386B5742581384B004EE2AB /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5386B5732581384B004EE2AB /* ReviewViewController.swift */; };
+		5386B57925813E98004EE2AB /* Medias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5386B57825813E97004EE2AB /* Medias.swift */; };
+		5386B58125813FD4004EE2AB /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5386B58025813FD4004EE2AB /* Review.swift */; };
+		5386B586258140E0004EE2AB /* Reviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5386B585258140E0004EE2AB /* Reviews.swift */; };
 		53E91CA3257866F40061C99F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 53E91CA2257866F40061C99F /* GoogleService-Info.plist */; };
 		53E91CB4257870900061C99F /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E91CB3257870900061C99F /* APIKeys.swift */; };
 		53E91CB92578779D0061C99F /* SearchPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E91CB82578779D0061C99F /* SearchPageViewController.swift */; };
@@ -70,6 +73,9 @@
 		536CEC1C25772E2F00DF1CEB /* UIViewController+alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+alert.swift"; sourceTree = "<group>"; };
 		5386B56825812F87004EE2AB /* Media.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
 		5386B5732581384B004EE2AB /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
+		5386B57825813E97004EE2AB /* Medias.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Medias.swift; sourceTree = "<group>"; };
+		5386B58025813FD4004EE2AB /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		5386B585258140E0004EE2AB /* Reviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reviews.swift; sourceTree = "<group>"; };
 		53E91CA2257866F40061C99F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		53E91CB3257870900061C99F /* APIKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 		53E91CB82578779D0061C99F /* SearchPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPageViewController.swift; sourceTree = "<group>"; };
@@ -148,6 +154,9 @@
 				536CEBE625772C7400DF1CEB /* SceneDelegate.swift */,
 				536CEBE825772C7400DF1CEB /* LoginViewController.swift */,
 				5386B56825812F87004EE2AB /* Media.swift */,
+				5386B57825813E97004EE2AB /* Medias.swift */,
+				5386B58025813FD4004EE2AB /* Review.swift */,
+				5386B585258140E0004EE2AB /* Reviews.swift */,
 				53E91CB82578779D0061C99F /* SearchPageViewController.swift */,
 				53E91CBD257878D40061C99F /* TVSearchResultViewController.swift */,
 				53E91CD725788AEA0061C99F /* MovieSearchResultViewController.swift */,
@@ -391,6 +400,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				536CEBE925772C7400DF1CEB /* LoginViewController.swift in Sources */,
+				5386B586258140E0004EE2AB /* Reviews.swift in Sources */,
 				53E91CE72578A5E70061C99F /* ContentDetailViewController.swift in Sources */,
 				53E91CBE257878D40061C99F /* TVSearchResultViewController.swift in Sources */,
 				53E91CEF2578B7360061C99F /* ServicesCollectionViewCell.swift in Sources */,
@@ -403,6 +413,8 @@
 				53E91CB92578779D0061C99F /* SearchPageViewController.swift in Sources */,
 				53E91CCD25787DEB0061C99F /* TVData.swift in Sources */,
 				53E91CC825787DA50061C99F /* MovieData.swift in Sources */,
+				5386B57925813E98004EE2AB /* Medias.swift in Sources */,
+				5386B58125813FD4004EE2AB /* Review.swift in Sources */,
 				536CEBE725772C7400DF1CEB /* SceneDelegate.swift in Sources */,
 				5386B5742581384B004EE2AB /* ReviewViewController.swift in Sources */,
 				536CEC1D25772E2F00DF1CEB /* UIViewController+alert.swift in Sources */,
