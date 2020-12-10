@@ -10,10 +10,19 @@ import UIKit
 class ReviewViewController: UIViewController {
     var review: Review!
     var media: Media!
+    
+    var showData: TVData!
+    var movieData: MovieData!
+    
+    
     var selectedService: String = ""
     var artwork: UIImage = UIImage()
     var dateToChange: Date = Date()
-
+    
+    @IBOutlet weak var saveBarButton: UIBarButtonItem!
+    @IBOutlet weak var commentTitleLabel: UILabel!
+    @IBOutlet weak var serviceTitleLabel: UILabel!
+    @IBOutlet weak var dateTitleLabel: UILabel!
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var datePicker: UIDatePicker!
@@ -27,7 +36,15 @@ class ReviewViewController: UIViewController {
     let servicesImages = [UIImage(named: "fuboTV"),UIImage(named: "google_play"),UIImage(named: "hulu"),UIImage(named: "itunes"),UIImage(named: "netflix"),UIImage(named: "Philo"),UIImage(named: "prime"),UIImage(named: "vudu"),UIImage(named: "youtube"),UIImage(named: "pirate")]
     
     
+    
     override func viewDidLoad() {
+        //get from struct
+        selectedServiceLabel.text = ""
+        saveBarButton.tintColor = .systemRed
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        datePicker.maximumDate = Date()
         imageView.image = artwork
         commentView.text = ""
         collectionView.delegate = self
@@ -39,7 +56,15 @@ class ReviewViewController: UIViewController {
         if review == nil {
             review = Review()
         }
-        
+        formatLabels()
+    }
+    
+    func checkIfCompleted() -> Bool{
+        if !commentView.text.isEmpty && selectedServiceLabel.text != "" {
+            saveBarButton.tintColor = .systemGreen
+            return true
+        }
+        return false
     }
     func leaveViewController() {
         let isPresentingInAddMode = presentingViewController is UINavigationController
@@ -52,14 +77,39 @@ class ReviewViewController: UIViewController {
     }
 
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
-        updateFromUserInterface()
-        review.saveData(media: media) { (success) in
-            if success{
-                self.leaveViewController()
+        if checkIfCompleted(){
+            updateFromUserInterface()
+            review.saveData(media: media) { (success) in
+                if success{
+                    self.leaveViewController()
+                }
+                else{
+                    print("Cant unwind from review")
+                }
             }
-            else{
-                print("Cant unwind from review")
+        }
+        else{
+            var name: String = ""
+            if showData != nil{
+                name = showData.name!
             }
+            if movieData != nil{
+                name = movieData.title!
+            }
+            oneButtonAlert(title: "Nope you can't save yet...", message: "Please tell us where you watched \(name), when you watched it, and leave some thoughts!")
+        }
+        
+    }
+    func formatLabels(){
+        if showData != nil{
+            commentTitleLabel.text = "Have anything to say about \(showData.name!)?"
+            dateTitleLabel.text = "When did you watch \(showData.name!)?"
+            serviceTitleLabel.text = "Where did you watch \(showData.name!)?"
+        }
+        if movieData != nil{
+            commentTitleLabel.text = "Have anything to say about \(movieData.title!)?"
+            dateTitleLabel.text = "When did you watch \(movieData.title!)?"
+            serviceTitleLabel.text = "Where did you watch \(movieData.title!)?"
         }
     }
     
@@ -77,9 +127,8 @@ class ReviewViewController: UIViewController {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMM dd, YYYY"
         let somedateString = dateFormatter.string(from: sender.date)
-
         print(somedateString)  // "somedateString" is your string date
-        
+        let _ = checkIfCompleted()
     }
     
 }
@@ -99,6 +148,7 @@ extension ReviewViewController: UICollectionViewDelegate, UICollectionViewDataSo
         selectedServiceLabel.isHidden = false
         selectedServiceLabel.text = servicesList[indexPath.row].capitalized.replacingOccurrences(of: "_", with: " ")
         selectedService = servicesList[indexPath.row]
+        let _ = checkIfCompleted()
     }
     
     

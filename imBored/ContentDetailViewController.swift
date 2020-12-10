@@ -49,8 +49,13 @@ class ContentDetailViewController: UIViewController {
     
     
     override func viewDidLoad() {
-        super.viewDidLoad()
         
+        
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        
+        super.viewDidLoad()
         if media == nil {
             media = Media()
         }
@@ -80,14 +85,13 @@ class ContentDetailViewController: UIViewController {
         }
 
         reviews.loadData(media: media) {
-            self.tableView.reloadData()
+            self.reviews.reviewArray.sort { $0.date > $1.date }
             self.reviewCountLabel.text = "\(self.reviews.reviewArray.count) peopleBored"
-            
+            self.filteredReviewArray = self.reviews.reviewArray
+            self.tableView.reloadData()
         }
-        
+  
 
-
-   
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -98,10 +102,12 @@ class ContentDetailViewController: UIViewController {
             let destination = navigationController.viewControllers.first as! ReviewViewController
             destination.media = media
             destination.artwork = artwork
+            destination.showData = showData
+            destination.movieData = movieData
         case "ShowReview":
             let destination = segue.destination as! ViewReviewViewController
             let selectedIndexPath = tableView.indexPathForSelectedRow!
-            destination.review = reviews.reviewArray[selectedIndexPath.row]
+            destination.review = filteredReviewArray[selectedIndexPath.row]
             destination.media = media
             destination.artwork = artwork
         default:
@@ -127,9 +133,12 @@ class ContentDetailViewController: UIViewController {
         }
     }
     
-    @IBAction func clearFilterButtonPressed(_ sender: UIButton) {
+   
+    @IBAction func removeFilterButtonPressed(_ sender: UIButton) {
+        resetReviewArray()
     }
     
+ 
     
     
     func updateUserInterface(){
@@ -155,9 +164,14 @@ class ContentDetailViewController: UIViewController {
     
     func filterReviewArray(selectedItem: String){
         filteredReviewArray = reviews.reviewArray.filter { $0.service == selectedItem }
+        tableView.reloadData()
+        reviewCountLabel.text = "\(filteredReviewArray.count) peopleBored"
     }
+    
     func resetReviewArray(){
         filteredReviewArray = reviews.reviewArray
+        tableView.reloadData()
+        reviewCountLabel.text = "\(filteredReviewArray.count) peopleBored"
     }
     
 }
@@ -184,15 +198,15 @@ extension ContentDetailViewController: UICollectionViewDelegate, UICollectionVie
 
 extension ContentDetailViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return reviews.reviewArray.count
+        return filteredReviewArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ReviewListTableViewCell
-        let image = UIImage(named: "\(reviews.reviewArray[indexPath.row].service)")
+        let image = UIImage(named: "\(filteredReviewArray[indexPath.row].service)")
         cell.serviceImage.image = image
-        cell.nameLabel.text = "\(reviews.reviewArray[indexPath.row].reviewUserEmail)"
-        cell.dateLabel.text = "\(dateFormatter.string(from: reviews.reviewArray[indexPath.row].date))"
+        cell.nameLabel.text = "\(filteredReviewArray[indexPath.row].reviewUserEmail)"
+        cell.dateLabel.text = "\(dateFormatter.string(from: filteredReviewArray[indexPath.row].date))"
         return cell
     }
     

@@ -31,7 +31,6 @@ class ViewReviewViewController: UIViewController{
         super.viewDidLoad()
 
         imageView.image = artwork
-
         nameLabel.text = review.reviewUserEmail
         dateLabel.text = "\(dateFormatter.string(from: review.date))"
         serviceLabel.text = review.service
