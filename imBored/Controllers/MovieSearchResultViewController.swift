@@ -13,7 +13,7 @@ class MovieSearchResultViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
   
     var movies = ResultData()
-    let contentType = "1"
+    let contentType = "MOVIE"
     var query: String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,19 +33,10 @@ class MovieSearchResultViewController: UIViewController {
             destination.movieData = movies.movieArray[selectedIndexPath.row]
             destination.contentType = contentType
             destination.docID = "\(movies.movieArray[selectedIndexPath.row].id)"
+            destination.name = "\(movies.movieArray[selectedIndexPath.row].title)"
         }
     }
-//    func getImage(urlString: String) -> UIImage{
-//        let url = URL(string: urlString)
-//        let data = try? Data(contentsOf: url!)
-//
-//        if let imageData = data {
-//            let image = UIImage(data: imageData)
-//            return image!
-//        }
-//        return UIImage()
-//    }
-    
+
 
 }
 

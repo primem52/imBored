@@ -50,7 +50,6 @@ class ContentDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         
-        
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
@@ -205,7 +204,8 @@ extension ContentDetailViewController: UITableViewDelegate, UITableViewDataSourc
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ReviewListTableViewCell
         let image = UIImage(named: "\(filteredReviewArray[indexPath.row].service)")
         cell.serviceImage.image = image
-        cell.nameLabel.text = "\(filteredReviewArray[indexPath.row].reviewUserEmail)"
+        
+        cell.nameLabel.text = "\( filteredReviewArray[indexPath.row].reviewUserEmail.components(separatedBy: CharacterSet(charactersIn: ("@"))).first ?? filteredReviewArray[indexPath.row].reviewUserEmail)"
         cell.dateLabel.text = "\(dateFormatter.string(from: filteredReviewArray[indexPath.row].date))"
         return cell
     }

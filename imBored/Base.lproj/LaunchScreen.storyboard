@@ -19,13 +19,24 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="4fxxbm4opjd31" translatesAutoresizingMaskIntoConstraints="NO" id="fAP-44-fN5">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                             </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imBoredArt 180x180" translatesAutoresizingMaskIntoConstraints="NO" id="kpD-Me-Tak">
+                                <rect key="frame" x="147" y="393" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="SDK-fZ-qls"/>
+                                    <constraint firstAttribute="height" constant="120" id="X4j-d1-aGK"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="kpD-Me-Tak" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="147" id="2OT-SA-l3f"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="kpD-Me-Tak" secondAttribute="bottom" constant="349" id="7pt-X0-YzM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kpD-Me-Tak" secondAttribute="trailing" constant="147" id="Yks-fB-lGr"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="fAP-44-fN5" secondAttribute="bottom" id="c2f-8O-c7E"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fAP-44-fN5" secondAttribute="trailing" id="cfL-De-g9L"/>
                             <constraint firstItem="fAP-44-fN5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="tLB-MU-QzS"/>
+                            <constraint firstItem="kpD-Me-Tak" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="349" id="tNz-iV-mOx"/>
                             <constraint firstItem="fAP-44-fN5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="vbv-gz-Is2"/>
                         </constraints>
                     </view>
@@ -37,6 +48,7 @@
     </scenes>
     <resources>
         <image name="4fxxbm4opjd31" width="3600" height="1979"/>
+        <image name="imBoredArt 180x180" width="180" height="180"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

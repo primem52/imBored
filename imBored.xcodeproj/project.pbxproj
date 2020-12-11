@@ -156,31 +156,15 @@
 			children = (
 				536CEBE425772C7400DF1CEB /* AppDelegate.swift */,
 				536CEBE625772C7400DF1CEB /* SceneDelegate.swift */,
-				536CEBE825772C7400DF1CEB /* LoginViewController.swift */,
-				5386B56825812F87004EE2AB /* Media.swift */,
-				5386B57825813E97004EE2AB /* Medias.swift */,
-				5386B58025813FD4004EE2AB /* Review.swift */,
-				5386B585258140E0004EE2AB /* Reviews.swift */,
-				53E91CB82578779D0061C99F /* SearchPageViewController.swift */,
-				53E91CBD257878D40061C99F /* TVSearchResultViewController.swift */,
-				53E91CD725788AEA0061C99F /* MovieSearchResultViewController.swift */,
-				53E91CE62578A5E70061C99F /* ContentDetailViewController.swift */,
-				5386B5732581384B004EE2AB /* ReviewViewController.swift */,
-				5386B58F25826E18004EE2AB /* ViewReviewViewController.swift */,
-				53E91CDC25788E9D0061C99F /* MovieTableViewCell.swift */,
-				53E91CE125788EAC0061C99F /* TVTableViewCell.swift */,
-				5386B58A25826C7B004EE2AB /* ReviewListTableViewCell.swift */,
-				53E91CEE2578B7360061C99F /* ServicesCollectionViewCell.swift */,
-				53E91CC225787D900061C99F /* ResultData.swift */,
-				53E91CC725787DA50061C99F /* MovieData.swift */,
-				53E91CCC25787DEB0061C99F /* TVData.swift */,
+				5386B59D2582DFF1004EE2AB /* Controllers */,
+				5386B59C2582DFCB004EE2AB /* Models */,
+				5386B5A32582E02A004EE2AB /* Utilities */,
+				5386B59E2582E01A004EE2AB /* Views */,
 				536CEBEA25772C7400DF1CEB /* Main.storyboard */,
 				536CEBED25772C7800DF1CEB /* Assets.xcassets */,
 				536CEBEF25772C7800DF1CEB /* LaunchScreen.storyboard */,
 				536CEBF225772C7800DF1CEB /* Info.plist */,
 				53E91CA2257866F40061C99F /* GoogleService-Info.plist */,
-				536CEC1C25772E2F00DF1CEB /* UIViewController+alert.swift */,
-				53E91CB3257870900061C99F /* APIKeys.swift */,
 			);
 			path = imBored;
 			sourceTree = "<group>";
@@ -201,6 +185,54 @@
 				536CEC0825772C7800DF1CEB /* Info.plist */,
 			);
 			path = imBoredUITests;
+			sourceTree = "<group>";
+		};
+		5386B59C2582DFCB004EE2AB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5386B56825812F87004EE2AB /* Media.swift */,
+				5386B57825813E97004EE2AB /* Medias.swift */,
+				5386B58025813FD4004EE2AB /* Review.swift */,
+				5386B585258140E0004EE2AB /* Reviews.swift */,
+				53E91CC225787D900061C99F /* ResultData.swift */,
+				53E91CC725787DA50061C99F /* MovieData.swift */,
+				53E91CCC25787DEB0061C99F /* TVData.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5386B59D2582DFF1004EE2AB /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				536CEBE825772C7400DF1CEB /* LoginViewController.swift */,
+				53E91CB82578779D0061C99F /* SearchPageViewController.swift */,
+				53E91CBD257878D40061C99F /* TVSearchResultViewController.swift */,
+				53E91CD725788AEA0061C99F /* MovieSearchResultViewController.swift */,
+				53E91CE62578A5E70061C99F /* ContentDetailViewController.swift */,
+				5386B5732581384B004EE2AB /* ReviewViewController.swift */,
+				5386B58F25826E18004EE2AB /* ViewReviewViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		5386B59E2582E01A004EE2AB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				53E91CDC25788E9D0061C99F /* MovieTableViewCell.swift */,
+				53E91CE125788EAC0061C99F /* TVTableViewCell.swift */,
+				5386B58A25826C7B004EE2AB /* ReviewListTableViewCell.swift */,
+				53E91CEE2578B7360061C99F /* ServicesCollectionViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5386B5A32582E02A004EE2AB /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				536CEC1C25772E2F00DF1CEB /* UIViewController+alert.swift */,
+				53E91CB3257870900061C99F /* APIKeys.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		6CFAF3CE7A50A971E2D82EEF /* Pods */ = {
